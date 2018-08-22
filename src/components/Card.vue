@@ -7,6 +7,7 @@
         <div class="card__title">{{card.title}}</div>
         <div class="card__body">{{card.text}}</div>
         <div class="card__footer">{{card.data}}</div>
+
     </div>
 </template>
 
