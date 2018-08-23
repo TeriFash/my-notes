@@ -1,22 +1,22 @@
 export default {
     cards: [
         {
-            title: 'Lorem ipsum',
+            title: 'Cookies',
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestiae!',
             data: '22.05.18'
         },
         {
-            title: 'Lorem ipsum',
+            title: 'Pay',
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestiae!',
             data: '22.05.18'
         },
         {
-            title: 'Lorem ipsum',
+            title: 'Blueberry',
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestiae!',
             data: '22.05.18'
         },
         {
-            title: 'Lorem ipsum',
+            title: 'Orange',
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestiae!',
             data: '22.05.18'
         },

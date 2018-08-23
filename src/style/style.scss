@@ -148,6 +148,8 @@ body {
   }
 }
 .card {
+  justify-content: space-between;
+  min-height: 150px;
   box-shadow: 9px 9px 20px -14px rgba(0, 0, 0, 0.6);
   padding: 20px;
   display: flex;
@@ -188,15 +190,18 @@ body {
     color: #505050;
   }
   &__title {
+    flex-grow: 1;
     font-size: 1.5em;
     margin-bottom: 10px;
 
   }
   &__body {
+    flex-grow: 3;
     font-size: 1em;
     margin-bottom: 10px;
   }
   &__footer {
+    flex-grow: 1;
     font-size: .7em;
     opacity: .5;
   }

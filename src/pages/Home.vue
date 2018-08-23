@@ -7,10 +7,11 @@
                 </label>
                 <input type="text"
                        id="inputSearch"
-                       placeholder="Search">
+                       placeholder="Search"
+                v-model="search">
             </div>
             <div class="card__container">
-                <card v-for="(item, i) in cardList.cards"
+                <card v-for="(item, i) in filteredCard"
                       :key="i"
                       :card="item"
                       @click="deleteCard(i)"/>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+    import {mapGetters} from 'Vuex';
     import MainLayout from '@/layout/MainLayout';
     import Card from '@/components/Card';
     import cardsMain from '@/store/cards.js';
@@ -30,12 +32,22 @@
         data() {
             return {
                 imgSearch,
+                search: '',
             };
         },
         computed: {
-            cardList() {
-                return this.$store.state.cards
-            },
+            ...mapGetters({
+                cards: 'getCards',
+            }),
+            // cardList() {
+            //     //console.log('-----', this.$store.getters.getCards);
+            //     return this.$store.getters.getCards
+            // },
+            filteredCard() {
+                return this.cards.cards.filter(item => {
+                    return item.title.toLowerCase().includes(this.search.toLowerCase())
+                })
+            }
         },
         components: {
             MainLayout,
@@ -43,12 +55,11 @@
         },
         methods: {
             deleteCard(index) {
-                this.cardList.cards.splice(index, 1);
+                this.cards.cards.splice(index, 1);
             },
-
         },
         created() {
-            this.$store.commit('loadCards', cardsMain);
+            this.$store.dispatch('loadCards', cardsMain);
         },
     }
 </script>
