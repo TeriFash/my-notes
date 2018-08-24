@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex';
+    import { mapGetters, mapActions } from 'vuex';
     import MainLayout from '@/layout/MainLayout';
     import Card from '@/components/Card';
     import cardsMain from '@/store/cards.js';
@@ -50,12 +50,16 @@
             Card,
         },
         methods: {
+            ...mapActions({
+                loadCards: 'loadCards',
+            }),
             deleteCard(index) {
                 this.cards.cards.splice(index, 1);
             },
         },
         created() {
-            this.$store.dispatch('loadCards', cardsMain);
+           // this.$store.dispatch('loadCards', cardsMain);
+            this.loadCards(cardsMain);
         },
     }
 </script>
