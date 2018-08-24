@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import {mapGetters} from 'Vuex';
+    import { mapGetters } from 'vuex';
     import MainLayout from '@/layout/MainLayout';
     import Card from '@/components/Card';
     import cardsMain from '@/store/cards.js';
@@ -37,12 +37,8 @@
         },
         computed: {
             ...mapGetters({
-                cards: 'getCards',
+                cards: 'getCards'
             }),
-            // cardList() {
-            //     //console.log('-----', this.$store.getters.getCards);
-            //     return this.$store.getters.getCards
-            // },
             filteredCard() {
                 return this.cards.cards.filter(item => {
                     return item.title.toLowerCase().includes(this.search.toLowerCase())

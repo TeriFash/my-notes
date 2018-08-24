@@ -11,8 +11,8 @@ export default new Vuex.Store({
         getCards: state => state.cards
     },
     actions: {
-        loadCards(context, cardsMain) {
-            context.commit('loadCards', cardsMain)
+        loadCards(context, cards) {
+            context.commit('loadCards', cards)
         }
     },
     mutations: {
