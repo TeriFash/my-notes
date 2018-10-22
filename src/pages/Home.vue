@@ -1,7 +1,7 @@
 <template>
     <main-layout>
         <div>
-            <div class="search">
+            <div class="search input-main">
                 <label for="inputSearch">
                     <img :src="imgSearch" alt="">
                 </label>

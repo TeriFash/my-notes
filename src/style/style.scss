@@ -17,6 +17,10 @@ body {
   font-size: 16px;
 }
 
+*:focus {
+  outline: -webkit-focus-ring-color auto 0;
+}
+
 #app {
   font-family: 'Oswald', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -35,40 +39,73 @@ body {
   }
 }
 
-// Search
 
-.search {
-  height: 50px;
+.input-main {
+  min-height: 50px;
   margin-bottom: 10px;
   border-radius: 6px;
   width: 100%;
   background: $white;
-  flex-grow: 1;
   display: flex;
   max-height: 50px;
   color: $linc-color;
   position: relative;
   align-items: center;
-  label {
-    display: flex;
-    align-items: center;
-  }
-  input {
-    height: 40px;
+  textarea, input {
+    padding: 0 16px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    height: auto;
     border: none;
     width: 100%;
     font-weight: 300;
     font-size: 1.2em;
     color: $linc-color;
-    margin-right: 10px;
     font-family: 'Oswald', sans-serif;
     &::placeholder {
-      padding-left: 10px;
       color: ($linc-color + 100);
     }
     &:focus {
       outline: -webkit-focus-ring-color auto 0;
     }
+  }
+  textarea {
+    padding-top: 16px;
+  }
+  input {
+    height: auto;
+    min-height: 50px;
+  }
+  button {
+    background: $orange;
+    color: gray;
+    min-height: 50px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    padding: 0 10px;
+    font-size: 16px;
+    @include transition(color, .2s);
+    border: none;
+    &:hover {
+      color: $white!important;
+    }
+
+  }
+}
+
+// Search
+
+.search {
+  flex-grow: 1;
+  label {
+    display: flex;
+    align-items: center;
+  }
+  input {
+    margin-right: 10px;
   }
   img {
     opacity: .3;
@@ -204,5 +241,32 @@ body {
     flex-grow: 1;
     font-size: .7em;
     opacity: .5;
+  }
+}
+.new__card {
+  display: block;
+  width: 100%;
+  min-height: 320px;
+
+  &__body, &__footer {
+    color: #505050;
+    width: 100%;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    .input-main {
+      flex-direction: column;
+    }
+    textarea, input {
+      margin-bottom: 10px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 200px;
+    }
+  }
+  &__footer {
+    //display: none;
   }
 }
