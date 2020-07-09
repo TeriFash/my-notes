@@ -1,21 +1,22 @@
-# my-project-3.0
+## vue my notes
 
-## Project setup
-```
-yarn install
-```
+My notes book home project
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+🚚 Project setup.<br />
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+> `yarn install` 
 
-### Lints and fixes files
-```
-yarn run lint
-```
+🏃 Start Dev Server environment.<br />
+
+> `yarn serve`
+
+🎁 Compiles and minifies for production.<br />
+
+> `yarn build`
+
+👀 Lints and fixes files.<br />
+
+> `yarn lint`
+
+⚒ Customize configuration.<br />
+See [Configuration Reference](https://cli.vuejs.org/config/).
